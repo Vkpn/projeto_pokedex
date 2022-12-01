@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'pagina_inicial/style.css' %}">
+    <title>Pokedex</title>
+</head>
+<body>
+    <header>
+        <div>
+            <div class="cabeçalho">
+                <h1 class="titulo_site">PoKéDeX</h1>
+            </div>
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+                {% endfor %}
+            {% endif %}
+            <div class="site">
+                <div class="pesquisa">
+                    <form class="formulario" action="{% url 'index' %}" method="GET">
+                        <input type="text" name="id" id="pokemon_pesquisa" class="campo_pesquisa" placeholder="Nome ou N° do Pokémon">
+                        <button type="submit" class="botao_pesquisa">Pesquisar</button>
+                    </form>
+                </div>
+                <div style="background-color:{{ cor }}" class="corpo">
+                    <div class="nome_numero">
+                        <p>{{ nome }}</p>
+                        <p>N°{{ id }}</p>
+                    </div>
+                    <div class="imagem_pokemon">
+                        <img class="imagem" src='{{ imagem }}' alt="imagem do pokemon">
+                    </div>
+                    <div class="listas">
+                        <ul class="lista_tpa">
+                            <li>Tipo:</li>
+                                {% for t in tipo %}
+                                    <p class="dados">{{ t }}</p>
+                                {% endfor %}
+                            <li>Peso:</li>
+                                <p class="dados">{{ peso }} Kg</p>
+                            <li>Altura:</li>
+                                <p class="dados">{{ altura }} m</p>
+                        </ul>
+                        <div>
+                            <ul class="lista_h">
+                                <li>Habilidades:</li>
+                                    {% for h in habilidade %}
+                                        <p class="dados"> {{ h }} </p>
+                                    {% endfor %}
+                            </ul>
+                            <div class="status">
+                                <div class="stat">
+                                    <span>HP:</span>
+                                    <p>{{ estatistica.0 }}</p>
+                                </div>
+                                <div class="stat">
+                                    <span>Attack:</span>
+                                    <p>{{ estatistica.1 }}</p>
+                                </div>
+                                <div class="stat">
+                                    <span>Defense:</span>
+                                    <p>{{ estatistica.2 }}</p>
+                                </div>
+                                <div class="stat">
+                                    <span>Sp.Atk:</span>
+                                    <p>{{ estatistica.3 }}</p>
+                                </div>
+                                <div class="stat">
+                                    <span>Sp.Def:</span>
+                                    <p>{{ estatistica.4 }}</p>
+                                </div>
+                                <div class="stat">
+                                    <span>Speed:</span>
+                                    <p>{{ estatistica.5 }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="raridade">
+                        {% if raridade == 'Normal' %}
+                            <img class="img_raridade" src="{% static 'pagina_inicial/images/normal.png' %}" alt="Imagem Raridade Pokemon">
+                        {% elif raridade == 'Baby' %}
+                            <img class="img_raridade" src="{% static 'pagina_inicial/images/baby.png' %}" alt="Imagem Raridade Pokemon">
+                        {% elif raridade == 'Legendary' %}
+                            <img class="img_raridade" src="{% static 'pagina_inicial/images/lendario.png' %}" alt="Imagem Raridade Pokemon">
+                        {% elif raridade == 'Mythical' %}
+                            <img class="img_raridade" src="{% static 'pagina_inicial/images/mitico.png' %}" alt="Imagem Raridade Pokemon">
+                        {% endif %}
+                        <p class="p_raridade">{{ raridade }}</p>
+                    </div>
+                </div>
+            </div>
+        <div>
+    </header>
+    <footer>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>

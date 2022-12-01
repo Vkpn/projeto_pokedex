@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* tela de Fundo */
+body {
+    background: white url("images/bg_site.jpg") no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 99.5vh;
+}
+
+/* Cabeçalho e Titulo */
+.cabeçalho {
+    margin: 5px 30px;
+    padding: 15px;
+    background-color: lightgray;
+    border: 3px solid gray;
+    border-radius: 15px;
+}
+
+/* Titulo do Site */
+.titulo_site {
+    font-family: 'Press Start 2P', cursive;
+    font-weight: normal;
+    font-style: normal;
+    margin: auto;
+    padding: auto;
+    color: yellow;
+    text-shadow: 2px 1px 1px blue;
+    font-size: 5 vmin;
+    text-align: center;
+}
+
+/* Div de Pesquisa e Botão */
+.pesquisa {
+    height: 40px;
+    display: inline-flex;
+    padding-left: 30px;
+    position: fixed;
+}
+
+/* Formulário de Pesquisa */
+.formulario {
+    margin: 0;
+    display: inline-flex;
+}
+
+/* Estilo da Pesquisa */
+.campo_pesquisa {
+    border-radius: 15px 0 0 15px;
+    padding-left: 5px;
+    width: 300px;
+    border: 3px solid gray;
+}
+
+/* Estilo do botão */
+.botao_pesquisa {
+    border-radius: 0 15px 15px 0;
+    width: 80px;
+    border: 3px solid gray;
+    border-left: none;
+}
+
+.botao_pesquisa:hover{
+    background-color: tomato;
+}
+
+.botao_pesquisa:active{
+    background-color: blue;
+    color: white;
+}
+
+/* Div Corpo do Site em Formato de Carta */
+.corpo {
+    border-radius: 15px;
+    border: 5px solid rgba(0, 0, 0, 0.26);
+    text-align: center;
+    margin: auto;
+    width: 25vw;
+    min-width: 410px;
+    filter: grayscale(15%);
+}
+
+/* Div Nome e Numero */
+.nome_numero {
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    border: 3px solid gray;
+    border-radius: 15px;
+    background-color: lightgrey;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Elementos P do Nome e Numero */
+.nome_numero > p {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    margin: 5px 10px;
+}
+
+.imagem_pokemon {
+    border: 6px solid gray;
+    border-radius: 20px;
+    height: 400px;
+    width: 400px;
+    margin: auto;
+    backdrop-filter: brightness(20%);
+}
+
+.imagem {
+    width: 400px;
+    backdrop-filter: grayscale(50%);
+    backdrop-filter: blur(70%);
+}
+
+.listas {
+    border: 3px solid gray;
+    border-radius: 15px;
+    background-color: lightgrey;
+    margin: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    display: flex;
+    list-style-position: inside;
+    text-align: left;
+}
+
+.lista_tpa {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    flex-grow: 3;
+    margin-left: 5px;
+}
+
+.lista_h {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    flex-grow: 1;
+    margin-right: 5px;
+}
+
+li {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.dados {
+    margin-left: 22px;
+    margin-bottom: 15px;
+    color: dimgray;
+}
+
+.status {
+    border: 3px solid gray;
+    border-radius: 15px;
+    padding: 10px;
+    margin-right: 5px;
+    background-color: lightgrey;
+    background-color: darkgray;
+    margin-bottom: 5px;
+}
+
+.stat {
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0 3px 0;
+}
+
+.stat > p {
+    margin-bottom: 0;
+}
+
+.raridade {
+    display: flex;
+    border: 3px solid gray;
+    border-radius: 15px;
+    background-color: lightgrey;
+    margin: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.img_raridade {
+    height: 10px;
+}
+
+.p_raridade {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    padding-left: 10px;
+}
+
